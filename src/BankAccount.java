@@ -1,30 +1,15 @@
-// Compte courant
-class CheckingAccount extends BankAccount {
-    private double limit;
+public class BankAccount {
+    protected String account;
+    protected double balance;
 
-    public CheckingAccount(String account, double balance, double limit) {
-        super(account, balance);
-        this.limit = limit;
+    public BankAccount(String account, double balance) {
+        this.account = account;
+        this.balance = balance;
     }
+
+    // Getters et Setters
+    public String getAccount() { return account; }
+    public void setAccount(String account) { this.account = account; }
+    public double getBalance() { return balance; }
+    public void setBalance(double balance) { this.balance = balance; }
 }
-
-// Compte épargne
-class SavingsAccount extends BankAccount {
-    private double interestRate; // Exemple d'attribut pour épargne
-
-    public SavingsAccount(String account, double balance, double interestRate) {
-        super(account, balance);
-        this.interestRate = interestRate;
-    }
-}
-
-// Certificat de dépôt
-class COD extends BankAccount {
-    private int duration; // Durée du certificat
-
-    public COD(String account, double balance, int duration) {
-        super(account, balance);
-        this.duration = duration;
-    }
-}
-
